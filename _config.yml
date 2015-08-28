@@ -1,0 +1,11 @@
+# Site settings
+title: Lighthouse Chapel Guinea Bissau
+email: your-email@domain.com
+description:
+ Website for Lighthouse Chapel Guinea Bissau
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.lighthousechapelbissau.org " # the base hostname & protocol for your site
+twitter_username: LighthouseChapelGB
+
+# Build settings
+markdown: kramdown
