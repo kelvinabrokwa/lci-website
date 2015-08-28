@@ -6,15 +6,28 @@
 
     <a class="dag-link" href="http://www.daghewardmills.org/">return to daghewardmills.org</a>
 
-    <nav class="site-nav">
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    <nav>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+        {% for page in site.data.nav %}
+
+          {% if page.subcategories != null %}
+          <li class="dropdown">
+            <a href="{{ page.href }}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">{{ page.title }}<i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+            {% for subcategory in page.subcategories %}
+              <li><a href="{{ subcategory.subhref }}">{{ subcategory.subtitle }}</a></li>
+            {% endfor %}
+            </ul>
+
+          {% else %}
+            <li><a href="{{ page.href }}">{{ page.title }}</a>
+
           {% endif %}
+          </li>
+
         {% endfor %}
-        <a class="page-link" href="http://www.daghewardmills.org/index.php/en/media-watch">Media</a>
-        <a class="page-link" href="http://www.daghewardmillsbooks.org/store/">Shop</a>
+        </ul>
       </div>
     </nav>
 

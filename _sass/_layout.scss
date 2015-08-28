@@ -236,3 +236,8 @@
         }
     }
 }
+
+// open dropdown on hover
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
